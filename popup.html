@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>ArchPro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css" />
+<link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="popup">
+    <header class="popup-head">
+      <span class="mark">⟡</span>
+      <h1>New entry</h1>
+    </header>
+
+    <form id="quick-form">
+      <label class="field">
+        <span class="field-label">Project</span>
+        <select id="project-picker">
+          <option value="__new__">+ New project</option>
+        </select>
+      </label>
+
+      <label class="field" id="new-name-field">
+        <span class="field-label">Project name</span>
+        <input type="text" id="project-name" placeholder="e.g. AuthVerify" autocomplete="off" />
+      </label>
+
+      <label class="field" id="source-field">
+        <span class="field-label">Where it lives</span>
+        <select id="project-source"></select>
+      </label>
+
+      <label class="field">
+        <span class="field-label">What you just did <span class="opt">optional</span></span>
+        <textarea id="checkpoint-note" rows="3" placeholder="Left off implementing the delete confirmation dialog..."></textarea>
+      </label>
+
+      <div id="captured-link" class="captured-link" hidden>
+        <span class="captured-dot"></span>
+        <span id="captured-link-text"></span>
+      </div>
+
+      <button type="submit" class="btn-primary">Log it</button>
+    </form>
+
+    <button id="open-dashboard" class="btn-ghost">Open full log →</button>
+    <button id="open-settings" class="btn-ghost">API key settings</button>
+    <p id="confirm-msg" class="confirm-msg" hidden>Logged.</p>
+  </div>
+  <script src="storage.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

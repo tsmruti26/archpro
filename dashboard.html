@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>ArchPro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css" />
+<link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="page-head">
+      <div class="title-block">
+        <span class="mark">⟡</span>
+        <h1>ArchPro</h1>
+      </div>
+      <div class="head-actions">
+        <input type="text" id="search" placeholder="Find a project..." />
+        <a href="settings.html" class="btn-ghost settings-link">Settings</a>
+        <button id="new-project-btn" class="btn-primary">+ New project</button>
+      </div>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab active" data-filter="active">Active</button>
+      <button class="tab" data-filter="archived">Archived</button>
+      <button class="tab" data-filter="all">All</button>
+    </nav>
+
+    <section id="grid" class="grid"></section>
+    <div id="empty-state" class="empty-state" hidden>
+      <p class="empty-mark">⟡</p>
+      <p>No projects logged yet.</p>
+      <p class="empty-sub">Every project you add gets its own timeline — come back in six months and know exactly where you left off.</p>
+    </div>
+  </div>
+
+  <div id="new-modal" class="modal-backdrop" hidden>
+    <div class="modal">
+      <h2>New project</h2>
+      <label class="field">
+        <span class="field-label">Name</span>
+        <input type="text" id="modal-name" autocomplete="off" />
+      </label>
+      <label class="field">
+        <span class="field-label">Where it lives</span>
+        <select id="modal-source"></select>
+      </label>
+      <div class="modal-actions">
+        <button id="modal-cancel" class="btn-ghost">Cancel</button>
+        <button id="modal-create" class="btn-primary">Create</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="build-stamp">build 2.2.0</div>
+
+  <script src="storage.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

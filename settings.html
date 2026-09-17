@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Settings — ArchPro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css" />
+<link rel="stylesheet" href="settings.css" />
+</head>
+<body>
+  <div class="page">
+    <a href="dashboard.html" class="back-link">← Back to log</a>
+    <h1>Settings</h1>
+
+    <section class="panel">
+      <h2>Anthropic API key</h2>
+      <p class="hint">
+        Used only to generate project summaries (what the project is, what tech it uses) from your checkpoint notes.
+        Stored locally in this browser via <code>chrome.storage.local</code> — never sent anywhere except
+        <code>api.anthropic.com</code>. Get a key at
+        <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener noreferrer">console.anthropic.com</a>.
+      </p>
+      <label class="field">
+        <span class="field-label">API key</span>
+        <input type="password" id="api-key-input" placeholder="sk-ant-..." autocomplete="off" />
+      </label>
+      <div class="row">
+        <button id="save-key" class="btn-primary">Save</button>
+        <button id="clear-key" class="btn-ghost">Clear</button>
+        <span id="save-status" class="save-status"></span>
+      </div>
+    </section>
+  </div>
+  <script src="storage.js"></script>
+  <script src="settings.js"></script>
+</body>
+</html>
